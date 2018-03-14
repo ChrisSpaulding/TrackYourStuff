@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "150016726974",
+    "project_id": "firebase-sqltest"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150016726974:android:8e37da0162c48c28",
+        "android_client_info": {
+          "package_name": "com.example.maheshbhattarai.sqlite_database_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150016726974-6u8qjm4jlioelb66dukg48ndrm9g01qo.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "150016726974-8v8nv88gtt7a0f3521g9cuiocs0aard6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maheshbhattarai.sqlite_database_demo",
+            "certificate_hash": "360c57efd0beaeaefc287fae659b6d0691dc8261"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR1E207UpmysacbW8Qb6x_0ZZO-FedWOE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
