@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
+// Jesus can comment now.
 class MainActivity : AppCompatActivity() {
 
     lateinit var btn_androidmap: Button
