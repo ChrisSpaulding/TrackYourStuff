@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo.database
+package com.example.trackYourStuff.sqlite_database_demo.database
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
@@ -11,7 +11,7 @@ import android.arch.persistence.room.Update
  * Created by Mahesh Bhattarai on 2/21/2018.
  */
 @Dao
-public interface RegistratiomDao {
+public interface RegistrationDao {
 
     @Insert(onConflict = REPLACE)
     abstract fun insertEmploy(employee: Registration)

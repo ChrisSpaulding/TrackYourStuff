@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.Manifest
 import android.content.Context
@@ -13,12 +13,11 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.ahmadrosid.lib.drawroutemap.DrawMarker
 import com.ahmadrosid.lib.drawroutemap.DrawRouteMaps
-import com.example.maheshbhattarai.sqlite_database_demo.adapter.PlacesAdapter
+import com.example.trackYourStuff.sqlite_database_demo.adapter.PlacesAdapter
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*

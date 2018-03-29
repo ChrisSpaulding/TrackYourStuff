@@ -1,16 +1,13 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.View
 import android.widget.LinearLayout
-import com.example.maheshbhattarai.sqlite_database_demo.adapter.CustomAdapter
-import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
-import android.widget.AdapterView.OnItemClickListener
-
+import com.example.trackYourStuff.sqlite_database_demo.adapter.CustomAdapter
+import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
 
 
 class Job_Listing : AppCompatActivity() {

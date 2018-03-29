@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
-import com.example.maheshbhattarai.sqlite_database_demo.database.Job_List
+import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
+import com.example.trackYourStuff.sqlite_database_demo.database.Job_List
 import java.util.*
 
 

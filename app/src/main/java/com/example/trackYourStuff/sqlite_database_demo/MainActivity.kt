@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.content.SharedPreferences
-import android.R.id.edit
 import android.annotation.SuppressLint
 
 

@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
-import com.example.maheshbhattarai.sqlite_database_demo.database.Registration
+import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
+import com.example.trackYourStuff.sqlite_database_demo.database.Registration
 
 
 class RegistrationActivity : AppCompatActivity() {

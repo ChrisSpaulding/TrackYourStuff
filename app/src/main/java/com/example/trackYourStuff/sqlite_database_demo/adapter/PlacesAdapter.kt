@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo.adapter
+package com.example.trackYourStuff.sqlite_database_demo.adapter
 
 import android.content.Context
 import android.util.Log

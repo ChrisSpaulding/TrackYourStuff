@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo.database
+package com.example.trackYourStuff.sqlite_database_demo.database
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
@@ -8,28 +8,27 @@ import android.arch.persistence.room.PrimaryKey
  * Created by Mahesh Bhattarai on 2/21/2018.
  */
 @Entity(tableName = "registration")
-public class Registration {
+public class Registration (
 
     @PrimaryKey(autoGenerate = true)
-    var employId: Long = 0
+    var employId: Long = 0,
 
     @ColumnInfo(name = "first_name")
-    var firstName: String? = null
+    var firstName: String = "",
 
     @ColumnInfo(name = "email")
-    var email: String? = null
+    var email: String = "",
 
     @ColumnInfo(name = "address")
-    var address: String? = null
+    var address: String? = "",
 
     @ColumnInfo(name = "phone_number")
-    var phone_number: String? = null
+    var phone_number: String? = "",
 
     @ColumnInfo(name = "password")
-    var password: String? = null
+    var password: String? = "",
 
     @ColumnInfo(name = "role")
-    var role: String? = null
+    var role: String? = ""
 
-
-}
+)

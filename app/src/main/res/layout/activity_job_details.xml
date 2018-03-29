@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.maheshbhattarai.sqlite_database_demo.Job_Details">
+    tools:context="com.example.trackYourStuff.sqlite_database_demo.Job_Details">
 
 </android.support.constraint.ConstraintLayout>

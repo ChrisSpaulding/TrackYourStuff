@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
+import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
 
 
 class LoginActivity : AppCompatActivity() {

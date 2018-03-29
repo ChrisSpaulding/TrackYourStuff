@@ -1,23 +1,35 @@
-package com.example.maheshbhattarai.sqlite_database_demo.database
+package com.example.trackYourStuff.sqlite_database_demo.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-/**
- * Created by Mahesh Bhattarai on 2/21/2018.
- */
 @Database(entities = arrayOf(Registration::class,Job_List::class), version = 2)
 abstract class AppDatabase : RoomDatabase() {
 
 
-    abstract fun employDao(): RegistratiomDao
+    abstract fun employDao(): RegistrationDao
 
     companion object {
 
-        private var INSTANCE: AppDatabase? = null
+        var TEST_MODE = false
 
+        private var INSTANCE: AppDatabase? = null
+        private var dbInstance: RegistrationDao? = null
+
+        fun getInstance(context: Context): RegistrationDao{
+            if(dbInstance==null){
+                if(TEST_MODE){
+                    INSTANCE = Room.inMemoryDatabaseBuilder(context,AppDatabase::class.java).allowMainThreadQueries().build()
+                    dbInstance = INSTANCE?.employDao()
+                } else {
+                    INSTANCE = Room.databaseBuilder(context, AppDatabase::class.java, "database_name").build()
+                    dbInstance = INSTANCE?.employDao()
+                }
+            }
+            return dbInstance!!
+        }
 
         fun getInMemoryDatabase(context: Context): AppDatabase? {
             if (INSTANCE == null) {
