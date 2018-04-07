@@ -39,6 +39,7 @@
         <activity android:name=".Job_Listing" />
         <activity android:name=".Job_Details" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".LocationLogger"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
