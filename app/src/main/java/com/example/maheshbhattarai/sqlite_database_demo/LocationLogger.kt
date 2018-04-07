@@ -27,32 +27,36 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import com.example.maheshbhattarai.sqlite_database_demo.R.id.locationTextView
 import kotlinx.android.synthetic.main.activity_locationlogger.*
-
+const val PERMISSION_REQUEST_GPS = 0
 
 class LocationLogger : AppCompatActivity() {
-    var permissionResults : Int=-1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_locationlogger)
 
-        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-
-        val locationListener = MyLocationListener()
-
-
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions( this,  arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION),permissionResults )
-
-            locationManager.requestLocationUpdates(
-                    LocationManager.GPS_PROVIDER, 5000, 10f, locationListener)
+        btn_gpsLocation.setOnClickListener{
+            displayGPSLocation()
         }
 
-        locationTextView.setText("Location: \n Long: ${locationListener.longitude} \n Lat: ${locationListener.latitude}")
+
 }
 
 
+fun displayGPSLocation(){
+    val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    val locationListener = MyLocationListener()
 
+    if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+        ActivityCompat.requestPermissions( this,  arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION),PERMISSION_REQUEST_GPS )
+
+        locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER, 5000, 10f, locationListener)
+    }
+    var locationText :String = "Location: \n Long: ${locationListener.longitude} \n Lat: ${locationListener.latitude}"
+    locationTextView.text= locationText
+}
 
 
     }
