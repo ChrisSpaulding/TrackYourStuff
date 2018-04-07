@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_main.*
 
 // Jesus can comment now.
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,11 @@ class MainActivity : AppCompatActivity() {
              val intent = Intent(this,HomeActivity::class.java)
              startActivity(intent)
         })
+
+        btn_location.setOnClickListener{
+            val intent = Intent ( this, LocationLogger::class.java)
+            startActivity(intent)
+        }
 
 
     }
