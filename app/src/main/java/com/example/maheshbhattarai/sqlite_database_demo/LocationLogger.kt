@@ -11,5 +11,14 @@ import android.R.id.edit
 import android.annotation.SuppressLint
 
 class LocationLogger : AppCompatActivity() {
-    
-}
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+    }
+
+
+
+
+    }
