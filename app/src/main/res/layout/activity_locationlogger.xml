@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/locationTextView"
         android:layout_width="142dp"
         android:layout_height="84dp"
         android:layout_marginLeft="87dp"
@@ -15,4 +15,14 @@
         android:text="@string/location_tracking"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="283dp" />
 </android.support.constraint.ConstraintLayout>
