@@ -56,8 +56,6 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
     val REQUEST_LOCATION = 1011
     var selectedLocation = ""
 
-
-
     var currentLatitute: Double = 0.0
     var currentLongtitute: Double = 0.0
 
@@ -84,7 +82,6 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
                     Log.e("CurrentlatLng", "lat " + location.latitude.toString() + " long" + location.longitude.toString());
                     currentLatitute = location.latitude
                     currentLongtitute = location.longitude
-
                    /* val options = MarkerOptions()
                             .position(CurrentlatLng)
                     googleMap?.apply {
@@ -98,7 +95,6 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
         }
-
         mLocationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval((10 * 1000).toLong())        // 10 seconds, in milliseconds
@@ -136,7 +132,6 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
 
             Log.i("Autocomplete", "Autocomplete item selected: " + primaryText)
 
-
             val placeResult = mGeoDataClient.getPlaceById(placeId)
             placeResult.addOnCompleteListener(object : OnCompleteListener<PlaceBufferResponse> {
                 override fun onComplete(task: Task<PlaceBufferResponse>) {
@@ -173,7 +168,6 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun assignToMap() {
         googleMap?.clear()
 
-
         try {
             val mallLoc = Location("")
             mallLoc.latitude = currentLatitute
@@ -203,13 +197,11 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
                 LatLng(destinationlatitude, destinationlongitude)
         )
 
-
         val latLngBounds = positions.fold(LatLngBounds.Builder(), LatLngBounds.Builder::include)
                 .build()
         val displaySize = Point()
         getWindowManager().getDefaultDisplay().getSize(displaySize);
         googleMap?.moveCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, displaySize.x, 180, 15));
-
 
         /*val options = MarkerOptions()
                 .position(latLng)
@@ -239,9 +231,7 @@ class SearchPlacesActivity : AppCompatActivity(), OnMapReadyCallback {
                         moveCamera(CameraUpdateFactory.newLatLng(CurrentlatLng))
                         animateCamera(CameraUpdateFactory.newLatLngZoom(CurrentlatLng, 15f))
                     }
-
                     //assignToMap()
-
                 } else {
                     Log.w("Location", "Failed to get location.")
                 }

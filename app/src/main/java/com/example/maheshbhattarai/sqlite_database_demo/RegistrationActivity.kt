@@ -39,20 +39,15 @@ class RegistrationActivity : AppCompatActivity() {
 
         radioRole = findViewById(R.id.radioRole)
 
-
-
         val btnShow = findViewById<Button>(R.id.btn_submit)
         btnShow?.setOnClickListener {
-
             val selectedId = radioRole?.getCheckedRadioButtonId()
 
             // find the radiobutton by returned id
             radioRoleButton = findViewById<View>(selectedId!!) as RadioButton
 
            // Toast.makeText(this, "" + radioRoleButton!!.getText(), Toast.LENGTH_SHORT).show();
-
             role = radioRoleButton!!.getText().toString()
-
 
             if (name.text.toString().isEmpty()) {
                 Toast.makeText(this, "Enter Name", Toast.LENGTH_SHORT).show()
@@ -89,7 +84,6 @@ class RegistrationActivity : AppCompatActivity() {
                 for (employee in userList) {
                     Log.e("name", employee.firstName)
                 }
-
                 /*val intent = Intent(this,LoginActivity::class.java)
                 startActivity(intent)
                 finish()*/

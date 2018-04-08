@@ -4,9 +4,6 @@ import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
-/**
- * Created by Mahesh Bhattarai on 2/21/2018.
- */
 @Entity(tableName = "job_list")
 public class Job_List {
 

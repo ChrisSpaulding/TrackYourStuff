@@ -7,9 +7,6 @@ import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
 
-/**
- * Created by Mahesh Bhattarai on 2/21/2018.
- */
 @Dao
 public interface RegistratiomDao {
 

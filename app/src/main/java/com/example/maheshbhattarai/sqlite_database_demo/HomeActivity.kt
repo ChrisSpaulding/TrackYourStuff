@@ -10,7 +10,6 @@ import android.content.SharedPreferences
 import android.R.id.edit
 import android.annotation.SuppressLint
 
-
 class HomeActivity : AppCompatActivity() {
 
     lateinit var btn_company: Button
