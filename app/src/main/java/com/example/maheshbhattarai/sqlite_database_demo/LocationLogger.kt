@@ -102,6 +102,7 @@ class LocationLogger : AppCompatActivity() {
                     currentLongitude = location.longitude
                     Log.i("long **", "$currentLongitude")
                     displayValues(location.longitude, location.latitude)
+                    "The current Latitude is $currentLatitude and the Longitude is $currentLongitude".toast(this)
                 } else {
                     Log.w("Location", "Failed to get location.")
                 }
@@ -117,5 +118,9 @@ class LocationLogger : AppCompatActivity() {
         locationTextView.text= "Location:"
         longTxtView.text= longTxt
         latTxtView.text=latTxt
+    }
+
+    fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
+        return Toast.makeText(context, this.toString(), duration).apply { show() }
     }
 }
