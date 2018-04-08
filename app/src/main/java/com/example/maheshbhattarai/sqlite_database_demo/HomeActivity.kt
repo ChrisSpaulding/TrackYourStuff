@@ -25,13 +25,10 @@ class HomeActivity : AppCompatActivity() {
         sharedpreferences = getSharedPreferences("role", Context.MODE_PRIVATE);
         val editor = sharedpreferences?.edit()
 
-
-
         btn_company = findViewById(R.id.btn_company)
         btn_jobSeeker = findViewById(R.id.btn_jobSeeker)
 
         btn_company.setOnClickListener(View.OnClickListener {
-
             editor?.putString("login_type", "Employeer");
             editor?.commit();
             val intent = Intent(this, LoginActivity::class.java)
