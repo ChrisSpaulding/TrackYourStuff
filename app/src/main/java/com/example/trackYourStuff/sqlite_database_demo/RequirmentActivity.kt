@@ -28,7 +28,6 @@ class RequirmentActivity : AppCompatActivity() {
     lateinit var amount: EditText
     lateinit var btn_submit: Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_requirment)
@@ -54,11 +53,8 @@ class RequirmentActivity : AppCompatActivity() {
             val mTimePicker: TimePickerDialog
             mTimePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { timePicker, selectedHour, selectedMinute ->
                 start_time.setText(selectedHour.toString() + ":" + selectedMinute)
-
-                number1 = selectedHour;
-
+                number1 = selectedHour
                 getDifference()
-
             }, hour, minute, false)//Yes 24 hour time
             mTimePicker.setTitle("Select Time")
             mTimePicker.show()
@@ -71,9 +67,7 @@ class RequirmentActivity : AppCompatActivity() {
             val mTimePicker: TimePickerDialog
             mTimePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { timePicker, selectedHour, selectedMinute ->
                 end_time.setText(selectedHour.toString() + ":" + selectedMinute)
-
-                number1 = selectedHour;
-
+                number1 = selectedHour
                 getDifference()
             }, hour, minute, false)//Yes 24 hour time
             mTimePicker.setTitle("Select Time")
@@ -96,7 +90,6 @@ class RequirmentActivity : AppCompatActivity() {
         } else if (amount.text.toString().isEmpty()) {
             Toast.makeText(this,"Enter Amount",Toast.LENGTH_SHORT).show()
         }else{
-
             val job_list = Job_List()
             job_list.jobt_name = job_name.text.toString()
             job_list.job_description = job_description.text.toString()
@@ -115,19 +108,16 @@ class RequirmentActivity : AppCompatActivity() {
             estimated_time.setText("")
             amount.setText("")
             job_name.requestFocus()
-
         }
     }
 
     private fun getDifference() {
         if (number1 != null && number2 != null) {
-
             result = (number1 - number2).toDouble()
             println("number1 - number2 = $result")
             val hours = Math.abs(result.toInt()).toString()
             Log.e("result", Math.abs(result.toInt()).toString())
             estimated_time.setText(hours)
-
         }
     }
 

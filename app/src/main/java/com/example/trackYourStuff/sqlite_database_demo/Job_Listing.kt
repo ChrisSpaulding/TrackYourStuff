@@ -1,14 +1,15 @@
-package com.example.trackYourStuff.sqlite_database_demo
+package com.example.maheshbhattarai.sqlite_database_demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
-import com.example.trackYourStuff.sqlite_database_demo.adapter.CustomAdapter
-import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
-
+import com.example.maheshbhattarai.sqlite_database_demo.adapter.CustomAdapter
+import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
+import android.widget.AdapterView.OnItemClickListener
 
 class Job_Listing : AppCompatActivity() {
 
@@ -23,7 +24,6 @@ class Job_Listing : AppCompatActivity() {
         val job_list = mDb?.employDao()?.findAllJobSync()
         Log.e("size", job_list?.size.toString())
 
-
         //getting recyclerview from xml
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
 
@@ -37,7 +37,6 @@ class Job_Listing : AppCompatActivity() {
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
-
       /*  recyclerView.addOnItemTouchListener(
                 RecyclerItemClickListener(this, recyclerView, object : RecyclerItemClickListener.OnItemClickListener() {
                     fun onItemClick(view: View, position: Int) {
@@ -49,9 +48,5 @@ class Job_Listing : AppCompatActivity() {
                     }
                 })
         )*/
-
-
-
-
     }
 }

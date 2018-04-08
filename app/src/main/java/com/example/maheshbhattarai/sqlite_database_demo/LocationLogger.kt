@@ -81,7 +81,7 @@ class LocationLogger : AppCompatActivity() {
                             }
                         })
             } catch (unlikely: SecurityException) {
-                Log.e("Location", "Lost location permission. Could not request updates. " + unlikely)
+                Log.e("Location", "Lost location permission. Could not request updates. $unlikely")
             }
         } catch (e: SecurityException) {
             e.printStackTrace()

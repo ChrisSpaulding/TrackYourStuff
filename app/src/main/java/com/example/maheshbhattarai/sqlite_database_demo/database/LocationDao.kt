@@ -8,11 +8,8 @@ import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
 import com.example.maheshbhattarai.sqlite_database_demo.CustomDate
 
-/**
- * Created by Track Your Stuff on 2/21/2018.
- */
 @Dao
-public interface LocationDao {
+interface LocationDao {
 
     @Insert(onConflict = REPLACE)
     abstract fun insertLocation(location: Location)

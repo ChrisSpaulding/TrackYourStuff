@@ -1,6 +1,5 @@
 package com.example.maheshbhattarai.sqlite_database_demo
 
-
 data class CustomDate (
         val year :Int,
         val month: Int,

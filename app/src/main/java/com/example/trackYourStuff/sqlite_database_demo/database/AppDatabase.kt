@@ -1,4 +1,4 @@
-package com.example.trackYourStuff.sqlite_database_demo.database
+package com.example.maheshbhattarai.sqlite_database_demo.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
@@ -8,28 +8,10 @@ import android.content.Context
 @Database(entities = arrayOf(Registration::class,Job_List::class), version = 2)
 abstract class AppDatabase : RoomDatabase() {
 
-
-    abstract fun employDao(): RegistrationDao
+    abstract fun employDao(): RegistratiomDao
 
     companion object {
-
-        var TEST_MODE = false
-
         private var INSTANCE: AppDatabase? = null
-        private var dbInstance: RegistrationDao? = null
-
-        fun getInstance(context: Context): RegistrationDao{
-            if(dbInstance==null){
-                if(TEST_MODE){
-                    INSTANCE = Room.inMemoryDatabaseBuilder(context,AppDatabase::class.java).allowMainThreadQueries().build()
-                    dbInstance = INSTANCE?.employDao()
-                } else {
-                    INSTANCE = Room.databaseBuilder(context, AppDatabase::class.java, "database_name").build()
-                    dbInstance = INSTANCE?.employDao()
-                }
-            }
-            return dbInstance!!
-        }
 
         fun getInMemoryDatabase(context: Context): AppDatabase? {
             if (INSTANCE == null) {

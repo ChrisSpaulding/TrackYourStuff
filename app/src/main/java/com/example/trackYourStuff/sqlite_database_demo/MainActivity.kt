@@ -17,19 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         btn_androidmap = findViewById(R.id.btn_androidmap)
         btn_androidsqlite = findViewById(R.id.btn_androidsqlite)
 
         btn_androidmap.setOnClickListener(View.OnClickListener {
-
-
             val intent = Intent(this, SearchPlacesActivity::class.java)
             startActivity(intent)
         })
 
         btn_androidsqlite.setOnClickListener(View.OnClickListener {
-
              val intent = Intent(this,HomeActivity::class.java)
              startActivity(intent)
         })
@@ -38,7 +34,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent ( this, LocationLogger::class.java)
             startActivity(intent)
         }
-
-
     }
 }
