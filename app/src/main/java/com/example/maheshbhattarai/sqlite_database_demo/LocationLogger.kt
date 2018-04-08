@@ -26,10 +26,8 @@ class LocationLogger : AppCompatActivity() {
     private val REQUEST_CHECK_SETTINGS = 0x1
     lateinit var location: Location
     val REQUEST_LOCATION = 1011
-    var currentLatitude: Double = 0.0
-    var currentLongitude: Double = 0.0
-
-
+    var currentLatitude: Double = 0.0 //currently do nothing
+    var currentLongitude: Double = 0.0 //currently do nothing
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,31 +35,29 @@ class LocationLogger : AppCompatActivity() {
 
         btn_gpsLocation.setOnClickListener{
             displayGPSLocation()
+            storeGPSLocation()
         }
+    }
 
+    fun storeGPSLocation(){
 
-}
+    }
 
-
-
-fun displayGPSLocation(){
-    initLocation()
-
-}
+    fun displayGPSLocation(){
+        initLocation()
+    }
 
     private fun initLocation() {
         try {
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this@LocationLogger)
             getLastLocation()
             try {
-
                 mSettingsClient.checkLocationSettings(mLocationSettingsRequest)
                         .addOnSuccessListener(this, object : OnSuccessListener<LocationSettingsResponse> {
                             override fun onSuccess(p0: LocationSettingsResponse?) {
                                 mFusedLocationClient.requestLocationUpdates(mLocationRequest,
                                         mLocationCallback, Looper.myLooper());
                             }
-
                         }).addOnFailureListener(this, object : OnFailureListener {
                             override fun onFailure(p0: java.lang.Exception) {
                                 val statusCode = (p0 as ApiException).getStatusCode();
@@ -78,17 +74,12 @@ fun displayGPSLocation(){
                                             Log.i("Location", "PendingIntent unable to execute request.");
                                         }
                                     }
-
                                     LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE ->
                                         Toast.makeText(this@LocationLogger, "Location settings are inadequate, and cannot be \"+\n" +
                                                 "                                    \"fixed here. Fix in Settings.", Toast.LENGTH_LONG).show();
-
-
                                 }
                             }
-
                         })
-
             } catch (unlikely: SecurityException) {
                 Log.e("Location", "Lost location permission. Could not request updates. " + unlikely)
             }
@@ -101,9 +92,9 @@ fun displayGPSLocation(){
 
     private fun getLastLocation() {
         try {
-            mFusedLocationClient.getLastLocation()?.addOnCompleteListener { task ->
+            mFusedLocationClient.lastLocation?.addOnCompleteListener { task ->
                 if (task.isSuccessful && task.result != null) {
-                    location = task.getResult()
+                    location = task.result
                     CurrentlatLng = LatLng(location.latitude, location.longitude)
                     Log.e("CurrentLatLong2", "lat " + location.latitude + " long " + location.longitude)
                     currentLatitude = location.latitude
@@ -111,18 +102,14 @@ fun displayGPSLocation(){
                     currentLongitude = location.longitude
                     Log.i("long **", "$currentLongitude")
                     displayValues(location.longitude, location.latitude)
-
-
                 } else {
                     Log.w("Location", "Failed to get location.")
                 }
             }
         } catch (unlikely: SecurityException) {
-            Log.e("Location", "Lost location permission." + unlikely)
+            Log.e("Location", "Lost location permission.$unlikely")
         }
-
     }
-
 
     fun displayValues(long : Double, lat :Double){
         val longTxt = "Logitude: $long"
@@ -131,7 +118,4 @@ fun displayGPSLocation(){
         longTxtView.text= longTxt
         latTxtView.text=latTxt
     }
-
 }
-
-
