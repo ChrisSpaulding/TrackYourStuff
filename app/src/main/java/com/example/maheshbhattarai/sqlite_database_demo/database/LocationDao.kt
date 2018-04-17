@@ -2,11 +2,10 @@ package com.example.maheshbhattarai.sqlite_database_demo.database
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
-import android.arch.persistence.room.OnConflictStrategy.IGNORE
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
-import com.example.maheshbhattarai.sqlite_database_demo.CustomDate
+import java.util.*
 
 @Dao
 interface LocationDao {
@@ -24,6 +23,6 @@ interface LocationDao {
     fun findAllEmploySync(): List<Registration>
 
     @Query("SELECT * FROM Location where date = Date")
-    fun findLocation(Date : CustomDate)
+    fun findLocation(Date : Date)
 
 }
