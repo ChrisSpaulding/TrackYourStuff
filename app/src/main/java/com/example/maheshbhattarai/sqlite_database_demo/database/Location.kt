@@ -3,17 +3,17 @@ package com.example.maheshbhattarai.sqlite_database_demo.database
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
-import com.example.maheshbhattarai.sqlite_database_demo.CustomDate
+import java.util.Date
 
 @Entity(tableName = "Location")
-public class Location {
+public class Location(time: Date, long: Double, lat: Double) {
 
     @PrimaryKey(autoGenerate = false)
-    var date: CustomDate? =null
+    var date: Date? =null
 
     @ColumnInfo(name = "latitude")
-    var latitude: Int? = null
+    var latitude: Double? = null
 
     @ColumnInfo(name = "longitude")
-    var longitude: Int? = null
+    var longitude: Double? = null
 }

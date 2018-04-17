@@ -9,6 +9,7 @@ import android.content.Context
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun employDao(): RegistratiomDao
+    abstract fun locationDao() : LocationDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null

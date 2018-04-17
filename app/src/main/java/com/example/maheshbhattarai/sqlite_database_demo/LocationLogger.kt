@@ -7,6 +7,7 @@ import android.location.*
 import android.util.Log
 import android.widget.Toast
 import android.os.Looper
+import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
@@ -14,9 +15,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import kotlinx.android.synthetic.main.activity_locationlogger.*
+import java.util.*
 
 class LocationLogger : AppCompatActivity() {
-
+    private var mDb: AppDatabase? = null
     lateinit var CurrentlatLng: LatLng
     lateinit var mLocationRequest: LocationRequest
     lateinit var mFusedLocationClient: FusedLocationProviderClient
@@ -32,22 +34,24 @@ class LocationLogger : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_locationlogger)
-
         btn_gpsLocation.setOnClickListener{
             displayGPSLocation()
-            storeGPSLocation()
+
         }
     }
 
-    fun storeGPSLocation(){
-
+    fun storeGPSLocation(long :Double, lat : Double){
+        val time = Date()
+        val mLocation : com.example.maheshbhattarai.sqlite_database_demo.database.Location = com.example.maheshbhattarai.sqlite_database_demo.database.Location(time,long,lat)
+        mDb = AppDatabase.getInMemoryDatabase(applicationContext)
+        mDb?.locationDao()?.insertLocation(mLocation)
     }
 
     fun displayGPSLocation(){
         initLocation()
     }
 
-    private fun initLocation() {
+    private fun initLocation()  {
         try {
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this@LocationLogger)
             getLastLocation()
@@ -77,6 +81,7 @@ class LocationLogger : AppCompatActivity() {
                                     LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE ->
                                         Toast.makeText(this@LocationLogger, "Location settings are inadequate, and cannot be \"+\n" +
                                                 "                                    \"fixed here. Fix in Settings.", Toast.LENGTH_LONG).show();
+
                                 }
                             }
                         })
@@ -103,6 +108,7 @@ class LocationLogger : AppCompatActivity() {
                     Log.i("long **", "$currentLongitude")
                     displayValues(location.longitude, location.latitude)
                     "The current Latitude is $currentLatitude and the Longitude is $currentLongitude".toast(this)
+                    storeGPSLocation(currentLongitude,currentLatitude)
                 } else {
                     Log.w("Location", "Failed to get location.")
                 }
