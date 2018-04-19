@@ -7,9 +7,6 @@ import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
 
-/**
- * Created by Mahesh Bhattarai on 2/21/2018.
- */
 @Dao
 public interface RegistrationDao {
 
@@ -33,4 +30,7 @@ public interface RegistrationDao {
 
     @Query("SELECT * FROM job_list")
     fun findAllJobSync(): List<Job_List>
+
+    @Query("SELECT * FROM Registration WHERE employId = :employIDNUM")
+    fun findEmployByID(employIDNUM : Int)
 }

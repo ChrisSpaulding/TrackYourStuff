@@ -49,5 +49,8 @@ dependencies {
     //implementation 'com.github.jd-alexander:library:1.1.0'
     implementation 'com.github.ar-android:DrawRouteMaps:1.0.0'
 
+    //livedata
+    implementation "android.arch.lifecycle:livedata:1.1.0"
+
 }
 apply plugin: 'com.google.gms.google-services'
