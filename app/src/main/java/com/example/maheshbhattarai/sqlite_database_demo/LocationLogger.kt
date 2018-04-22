@@ -33,7 +33,7 @@ class LocationLogger : AppCompatActivity() {
     var currentLatitude: Double = 0.0 //currently do nothing
     var currentLongitude: Double = 0.0 //currently do nothing
     var sleepTime : Long = 60000
-    private var mTrackThread : trackingThead = trackingThead()
+ 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class LocationLogger : AppCompatActivity() {
         btn_gpsLocation.setOnClickListener{
             displayGPSLocation()
         }
-        mTrackThread.start()
+
     }
 
     fun storeGPSLocation(long :Double, lat : Double){
@@ -144,10 +144,10 @@ class LocationLogger : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(mTrackThread!!.isAlive()){
-                mTrackThread?.interrupt()}
+
     }
 
+    /*
     /////////////////////////////////COntinous Tracking Thread//////////////////////
     private inner class trackingThead: Thread(){
 
@@ -164,4 +164,5 @@ class LocationLogger : AppCompatActivity() {
 
 
     }
+    */
 }
