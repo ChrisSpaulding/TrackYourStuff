@@ -63,7 +63,7 @@ class LocationLogger : AppCompatActivity() {
     JobIntentService.enqueueWork(this,LocationIntentService::class.java, 2018, intent)
     }
 
-    private fun initLocation()  {
+    internal fun initLocation()  {
         try {
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this@LocationLogger)
             getLastLocation()

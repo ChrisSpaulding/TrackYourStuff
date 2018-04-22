@@ -33,10 +33,13 @@ class LocationIntentService : JobIntentService() {
         toast("Executing: $loops")
 
         for (i in 0..loops) {
+            var logger : LocationLogger = LocationLogger()
+            logger.initLocation()
+
             Log.i("SimpleJobIntentService", "Running service " + (i + 1)
                     + "/5 @ " + SystemClock.elapsedRealtime())
             try {
-                Thread.sleep(1000)
+                Thread.sleep(10000)
             } catch (e: InterruptedException) {
             }
 
