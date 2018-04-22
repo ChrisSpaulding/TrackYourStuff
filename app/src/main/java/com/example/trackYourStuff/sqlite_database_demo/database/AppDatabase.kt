@@ -1,11 +1,11 @@
 package com.example.maheshbhattarai.sqlite_database_demo.database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
+import android.arch.persistence.room.*
 import android.content.Context
 
-@Database(entities = arrayOf(Registration::class,Job_List::class,Location::class), version = 2)
+@Database(entities = arrayOf(Registration::class,Job_List::class,Location::class), version = 1)
+@TypeConverters(DateConverter::class)
+
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun employDao(): RegistratiomDao
