@@ -30,14 +30,16 @@ class LocationLogger : AppCompatActivity() {
     val REQUEST_LOCATION = 1011
     var currentLatitude: Double = 0.0 //currently do nothing
     var currentLongitude: Double = 0.0 //currently do nothing
+    var sleepTime : Long = 60000
+    private var mTrackThread : trackingThead = trackingThead()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_locationlogger)
         btn_gpsLocation.setOnClickListener{
             displayGPSLocation()
-
         }
+        mTrackThread.start()
     }
 
     fun storeGPSLocation(long :Double, lat : Double){
@@ -128,5 +130,28 @@ class LocationLogger : AppCompatActivity() {
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
         return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if(mTrackThread!!.isAlive()){
+                mTrackThread?.interrupt()}
+    }
+
+    /////////////////////////////////COntinous Tracking Thread//////////////////////
+    private inner class trackingThead: Thread(){
+
+
+       override fun run(){
+           while(!interrupted()) {
+               initLocation()
+               Thread.sleep(sleepTime)
+               Log.i("sleep", "run run run run redrum redrum")
+           }
+
+
+       }
+
+
     }
 }
