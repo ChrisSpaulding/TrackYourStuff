@@ -6,14 +6,13 @@ import android.arch.persistence.room.PrimaryKey
 import java.util.Date
 
 @Entity(tableName = "Location")
-public class Location(time: Date, long: Double, lat: Double) {
-
+data class Location (
     @PrimaryKey(autoGenerate = false)
-    var date: Date? =null
-
+    var date: Date,
     @ColumnInfo(name = "latitude")
-    var latitude: Double? = null
-
+    var latitude: Double,
     @ColumnInfo(name = "longitude")
-    var longitude: Double? = null
+    var longitude: Double
+){
+    constructor():this(Date(),0.0,0.0)
 }

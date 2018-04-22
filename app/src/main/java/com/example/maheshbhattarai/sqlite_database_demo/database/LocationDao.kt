@@ -22,7 +22,7 @@ interface LocationDao {
     @Query("SELECT * FROM registration")
     fun findAllEmploySync(): List<Registration>
 
-    @Query("SELECT * FROM Location where date = Date")
-    fun findLocation(Date : Date)
+    @Query("SELECT * FROM Location where Date = :mDate")
+    fun findLocation(mDate : Date): List<Location>
 
 }
