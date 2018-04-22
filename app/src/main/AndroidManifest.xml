@@ -39,7 +39,10 @@
         <activity android:name=".Job_Listing" />
         <activity android:name=".Job_Details" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".LocationLogger"/>
+        <activity android:name=".LocationLogger" />
+
+        <service android:name="LocationIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

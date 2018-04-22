@@ -7,10 +7,12 @@ import android.location.*
 import android.util.Log
 import android.widget.Toast
 import android.os.Looper
+import android.support.v4.app.JobIntentService
 import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
+import com.google.android.gms.location.LocationListener
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -50,7 +52,15 @@ class LocationLogger : AppCompatActivity() {
     }
 
     fun displayGPSLocation(){
-        initLocation()
+       // initLocation()
+        launchIntent(5)
+    }
+
+    fun launchIntent( x:Int){
+        var intent : Intent = Intent()
+        intent.putExtra("length",x )
+        var mLoc : LocationIntentService = LocationIntentService()
+    JobIntentService.enqueueWork(this,LocationIntentService::class.java, 2018, intent)
     }
 
     private fun initLocation()  {
