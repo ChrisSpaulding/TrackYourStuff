@@ -11,7 +11,7 @@ import java.util.*
 interface LocationDao {
 
     @Insert(onConflict = REPLACE)
-    abstract fun insertLocation(location: Location)
+    fun insertLocation(location: Location)
 
     @Update(onConflict = REPLACE)
     fun updateEmploy(employee: Registration)
