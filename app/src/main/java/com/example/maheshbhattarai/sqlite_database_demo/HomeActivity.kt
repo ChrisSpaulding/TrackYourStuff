@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.content.SharedPreferences
-import android.R.id.edit
 import android.annotation.SuppressLint
 
 class HomeActivity : AppCompatActivity() {
@@ -21,25 +20,25 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        sharedpreferences = getSharedPreferences("role", Context.MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences("role", Context.MODE_PRIVATE)
         val editor = sharedpreferences?.edit()
 
         btn_company = findViewById(R.id.btn_company)
         btn_jobSeeker = findViewById(R.id.btn_jobSeeker)
 
-        btn_company.setOnClickListener(View.OnClickListener {
-            editor?.putString("login_type", "Employeer");
+        btn_company.setOnClickListener{
+            editor?.putString("login_type", "Employeer")
             editor?.commit();
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-        })
+        }
 
-        btn_jobSeeker.setOnClickListener(View.OnClickListener {
-            editor?.putString("login_type", "Job_Seeker");
-            editor?.commit();
+        btn_jobSeeker.setOnClickListener {
+            editor?.putString("login_type", "Job_Seeker")
+            editor?.commit()
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
-        })
+        }
 
     }
 }
