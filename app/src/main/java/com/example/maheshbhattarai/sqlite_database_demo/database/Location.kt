@@ -12,7 +12,4 @@ data class Location (
     @ColumnInfo(name = "latitude")
     var latitude: Double,
     @ColumnInfo(name = "longitude")
-    var longitude: Double
-){
-    constructor():this(Date(),0.0,0.0)
-}
+    var longitude: Double )
