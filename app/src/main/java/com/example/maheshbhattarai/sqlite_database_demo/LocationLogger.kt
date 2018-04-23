@@ -35,6 +35,8 @@ class LocationLogger : AppCompatActivity() {
     var sleepTime : Long = 60000
  
 
+    //TODO Check permissions like the map module
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_locationlogger)
