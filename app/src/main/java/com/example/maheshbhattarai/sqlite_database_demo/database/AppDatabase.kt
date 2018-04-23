@@ -19,6 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase::class.java,"simple.db")
                         // To simplify the codelab, allow queries on the main thread.
                         // Don't do this on a real app! See PersistenceBasicSample for an example.
+                        //TODO remove main thread queries
                         .allowMainThreadQueries()
                         .build()
             }
