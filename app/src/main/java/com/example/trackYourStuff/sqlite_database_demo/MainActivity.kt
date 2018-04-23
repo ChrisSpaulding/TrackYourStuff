@@ -20,12 +20,13 @@ class MainActivity : AppCompatActivity() {
         btn_androidmap = findViewById(R.id.btn_androidmap)
         btn_androidsqlite = findViewById(R.id.btn_androidsqlite)
 
-        btn_androidmap.setOnClickListener(View.OnClickListener {
+        btn_androidmap.setOnClickListener({
             val intent = Intent(this, SearchPlacesActivity::class.java)
             startActivity(intent)
         })
 
-        btn_androidsqlite.setOnClickListener(View.OnClickListener {
+        btn_androidsqlite.visibility = View.GONE
+        btn_androidsqlite.setOnClickListener({
              val intent = Intent(this,HomeActivity::class.java)
              startActivity(intent)
         })

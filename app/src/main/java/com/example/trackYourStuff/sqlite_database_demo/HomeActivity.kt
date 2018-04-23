@@ -9,6 +9,7 @@ import android.widget.Button
 import android.content.SharedPreferences
 import android.annotation.SuppressLint
 
+// TODO: Refactor the name of home activity. Is this name descriptive of the functionality
 class HomeActivity : AppCompatActivity() {
 
     lateinit var btn_company: Button
@@ -20,6 +21,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        //TODO does this call slow down the app?
         sharedpreferences = getSharedPreferences("role", Context.MODE_PRIVATE)
         val editor = sharedpreferences?.edit()
 
@@ -28,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         btn_company.setOnClickListener{
             editor?.putString("login_type", "Employeer")
-            editor?.commit();
+            editor?.apply()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
