@@ -1,7 +1,6 @@
 package com.example.trackYourStuff.sqlite_database_demo
 
 import org.junit.Test
-
 import org.junit.Assert.*
 
 /**

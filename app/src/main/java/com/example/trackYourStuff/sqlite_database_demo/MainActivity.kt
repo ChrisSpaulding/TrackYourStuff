@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
-// Jesus can comment now.
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var btn_androidmap: Button
@@ -18,17 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_androidmap = findViewById(R.id.btn_androidmap)
-        btn_androidsqlite = findViewById(R.id.btn_androidsqlite)
 
         btn_androidmap.setOnClickListener({
             val intent = Intent(this, SearchPlacesActivity::class.java)
             startActivity(intent)
-        })
-
-        btn_androidsqlite.visibility = View.GONE
-        btn_androidsqlite.setOnClickListener({
-             val intent = Intent(this,HomeActivity::class.java)
-             startActivity(intent)
         })
 
         btn_location.setOnClickListener{

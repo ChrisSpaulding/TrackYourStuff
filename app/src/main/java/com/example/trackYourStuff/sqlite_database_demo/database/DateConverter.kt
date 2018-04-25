@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo.database
+package com.example.trackYourStuff.sqlite_database_demo.database
 
 import android.arch.persistence.room.TypeConverter
 

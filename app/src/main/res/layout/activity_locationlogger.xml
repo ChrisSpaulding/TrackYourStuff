@@ -14,7 +14,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="102dp"
         android:text="@string/location_tracking"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/longTxtView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

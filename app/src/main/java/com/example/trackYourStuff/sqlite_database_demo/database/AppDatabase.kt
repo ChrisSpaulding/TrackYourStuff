@@ -1,14 +1,13 @@
-package com.example.maheshbhattarai.sqlite_database_demo.database
+package com.example.trackYourStuff.sqlite_database_demo.database
 
 import android.arch.persistence.room.*
 import android.content.Context
 
-@Database(entities = arrayOf(Registration::class,Job_List::class,Location::class), version = 1)
+@Database(entities = arrayOf( Job_List::class, Location::class), version = 1)
 @TypeConverters(DateConverter::class)
 
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun employDao(): RegistratiomDao
     abstract fun locationDao() : LocationDao
 
     companion object {

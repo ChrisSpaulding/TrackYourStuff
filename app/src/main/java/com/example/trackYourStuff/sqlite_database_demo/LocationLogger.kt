@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,11 +8,10 @@ import android.util.Log
 import android.widget.Toast
 import android.os.Looper
 import android.support.v4.app.JobIntentService
-import com.example.maheshbhattarai.sqlite_database_demo.database.AppDatabase
+import com.example.trackYourStuff.sqlite_database_demo.database.AppDatabase
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
-import com.google.android.gms.location.LocationListener
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -48,7 +47,7 @@ class LocationLogger : AppCompatActivity() {
 
     fun storeGPSLocation(long :Double, lat : Double){
         val time = Date()
-        val mLocation : com.example.maheshbhattarai.sqlite_database_demo.database.Location = com.example.maheshbhattarai.sqlite_database_demo.database.Location(time,long,lat)
+        val mLocation : com.example.trackYourStuff.sqlite_database_demo.database.Location = com.example.trackYourStuff.sqlite_database_demo.database.Location(time, long, lat)
         mDb = AppDatabase.getInMemoryDatabase(applicationContext)
         mDb?.locationDao()?.insertLocation(mLocation)
     }
@@ -62,7 +61,7 @@ class LocationLogger : AppCompatActivity() {
         var intent : Intent = Intent()
         intent.putExtra("length",x )
         var mLoc : LocationIntentService = LocationIntentService()
-    JobIntentService.enqueueWork(this,LocationIntentService::class.java, 2018, intent)
+    JobIntentService.enqueueWork(this, LocationIntentService::class.java, 2018, intent)
     }
 
     internal fun initLocation()  {

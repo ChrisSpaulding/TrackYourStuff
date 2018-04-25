@@ -1,4 +1,4 @@
-package com.example.maheshbhattarai.sqlite_database_demo
+package com.example.trackYourStuff.sqlite_database_demo
 
 //source : https://developer.android.com/reference/android/support/v4/app/JobIntentService.html
 import android.content.Context
