@@ -25,12 +25,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
-        btn_androidsqlite.visibility = View.GONE
-        btn_androidsqlite.setOnClickListener({
-             val intent = Intent(this,HomeActivity::class.java)
-             startActivity(intent)
-        })
-
         btn_location.setOnClickListener{
             val intent = Intent ( this, LocationLogger::class.java)
             startActivity(intent)
