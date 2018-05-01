@@ -31,7 +31,8 @@
             android:layout_below="@+id/btn_androidmap"
             android:layout_marginTop="20dp"
             android:text="Android Sqlite"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <Button
             android:id="@+id/btn_location"
